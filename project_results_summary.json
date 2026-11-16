@@ -1,0 +1,436 @@
+{
+  "dataset": "RadioML 2016.10A optimized Zenodo archive",
+  "selected_classes": [
+    "BPSK",
+    "QPSK",
+    "8PSK",
+    "PAM4",
+    "QAM16",
+    "QAM64",
+    "CPFSK",
+    "GFSK"
+  ],
+  "selected_observations": 160000,
+  "input_shape": [
+    2,
+    128
+  ],
+  "split_counts": {
+    "train": 78400,
+    "validation": 16800,
+    "familiar_test": 16800,
+    "unseen_snr_test": 48000
+  },
+  "heldout_snr_db": [
+    -20,
+    -12,
+    -4,
+    4,
+    12,
+    18
+  ],
+  "logistic_validation": {
+    "model": "LogisticRegression(saga, C=1.0, max_iter=200, tol=1e-3)",
+    "features": "flattened I/Q (256 features)",
+    "scaling": "StandardScaler fitted on training set only",
+    "train_observations": 78400,
+    "validation_observations": 16800,
+    "validation_accuracy": 0.13089285714285714,
+    "validation_macro_f1": 0.13061229967595447,
+    "iterations_per_class": [
+      15
+    ],
+    "training_seconds": 6.785959367000032,
+    "warnings": [],
+    "test_sets_used_for_tuning": false
+  },
+  "cnn_validation": {
+    "model": "CPU-friendly SmallAMC 1D CNN (channels 2-16-32-32; global average pooling)",
+    "optimizer": "Adam(lr=0.002, weight_decay=0.0001)",
+    "batch_size": 1024,
+    "epochs_completed": 10,
+    "best_epoch": 10,
+    "best_validation_accuracy": 0.5839,
+    "best_validation_macro_f1": 0.5793,
+    "validation_selection_metric": "macro-F1",
+    "test_sets_used_for_tuning": false,
+    "notes": [
+      "The best checkpoint was saved at epoch 10. The execution environment stopped the run immediately after the epoch-10 metrics were produced, before the original script wrote its summary file.",
+      "The checkpoint weights are present in cnn_best.pt.",
+      "The first 10 epoch metrics below are transcribed from the captured training log."
+    ]
+  },
+  "final_test_results": {
+    "logistic_regression": {
+      "familiar_test": {
+        "observations": 16800,
+        "accuracy": 0.13398809523809524,
+        "macro_f1": 0.133667046731815,
+        "balanced_accuracy": 0.13398809523809524,
+        "per_class": {
+          "BPSK": {
+            "precision": 0.12802768166089964,
+            "recall": 0.10571428571428572,
+            "f1-score": 0.11580594679186229,
+            "support": 2100.0
+          },
+          "QPSK": {
+            "precision": 0.13173957273652084,
+            "recall": 0.12333333333333334,
+            "f1-score": 0.12739793408755534,
+            "support": 2100.0
+          },
+          "8PSK": {
+            "precision": 0.13431503792949576,
+            "recall": 0.14333333333333334,
+            "f1-score": 0.13867772402672196,
+            "support": 2100.0
+          },
+          "PAM4": {
+            "precision": 0.13954434499593166,
+            "recall": 0.16333333333333333,
+            "f1-score": 0.15050460728389645,
+            "support": 2100.0
+          },
+          "QAM16": {
+            "precision": 0.12007168458781362,
+            "recall": 0.12761904761904763,
+            "f1-score": 0.123730378578024,
+            "support": 2100.0
+          },
+          "QAM64": {
+            "precision": 0.15191815856777494,
+            "recall": 0.14142857142857143,
+            "f1-score": 0.14648581997533908,
+            "support": 2100.0
+          },
+          "CPFSK": {
+            "precision": 0.13011152416356878,
+            "recall": 0.13333333333333333,
+            "f1-score": 0.1317027281279398,
+            "support": 2100.0
+          },
+          "GFSK": {
+            "precision": 0.13627546071774976,
+            "recall": 0.13380952380952382,
+            "f1-score": 0.13503123498318118,
+            "support": 2100.0
+          },
+          "accuracy": 0.13398809523809524,
+          "macro avg": {
+            "precision": 0.13400043316996937,
+            "recall": 0.13398809523809524,
+            "f1-score": 0.133667046731815,
+            "support": 16800.0
+          },
+          "weighted avg": {
+            "precision": 0.13400043316996937,
+            "recall": 0.13398809523809524,
+            "f1-score": 0.133667046731815,
+            "support": 16800.0
+          }
+        }
+      },
+      "unseen_snr_test": {
+        "observations": 48000,
+        "accuracy": 0.1335625,
+        "macro_f1": 0.13311305386748196,
+        "balanced_accuracy": 0.1335625,
+        "per_class": {
+          "BPSK": {
+            "precision": 0.12985436893203883,
+            "recall": 0.107,
+            "f1-score": 0.11732456140350878,
+            "support": 6000.0
+          },
+          "QPSK": {
+            "precision": 0.12238805970149254,
+            "recall": 0.11616666666666667,
+            "f1-score": 0.1191962377084224,
+            "support": 6000.0
+          },
+          "8PSK": {
+            "precision": 0.1269364527347455,
+            "recall": 0.13383333333333333,
+            "f1-score": 0.1302936881388934,
+            "support": 6000.0
+          },
+          "PAM4": {
+            "precision": 0.1434517203107658,
+            "recall": 0.17233333333333334,
+            "f1-score": 0.1565717746820109,
+            "support": 6000.0
+          },
+          "QAM16": {
+            "precision": 0.1258903685351502,
+            "recall": 0.1355,
+            "f1-score": 0.13051854230213517,
+            "support": 6000.0
+          },
+          "QAM64": {
+            "precision": 0.14441602728047742,
+            "recall": 0.14116666666666666,
+            "f1-score": 0.14277286135693215,
+            "support": 6000.0
+          },
+          "CPFSK": {
+            "precision": 0.12767039674465921,
+            "recall": 0.1255,
+            "f1-score": 0.12657589510842157,
+            "support": 6000.0
+          },
+          "GFSK": {
+            "precision": 0.14662861220121298,
+            "recall": 0.137,
+            "f1-score": 0.14165087023953127,
+            "support": 6000.0
+          },
+          "accuracy": 0.1335625,
+          "macro avg": {
+            "precision": 0.13340450080506783,
+            "recall": 0.13356250000000003,
+            "f1-score": 0.13311305386748196,
+            "support": 48000.0
+          },
+          "weighted avg": {
+            "precision": 0.1334045008050678,
+            "recall": 0.1335625,
+            "f1-score": 0.13311305386748196,
+            "support": 48000.0
+          }
+        }
+      }
+    },
+    "1d_cnn": {
+      "familiar_test": {
+        "observations": 16800,
+        "accuracy": 0.5852380952380952,
+        "macro_f1": 0.5805813774524891,
+        "balanced_accuracy": 0.5852380952380952,
+        "per_class": {
+          "BPSK": {
+            "precision": 0.5125220458553792,
+            "recall": 0.6919047619047619,
+            "f1-score": 0.588855116514691,
+            "support": 2100.0
+          },
+          "QPSK": {
+            "precision": 0.6464026770775237,
+            "recall": 0.5519047619047619,
+            "f1-score": 0.5954276907269458,
+            "support": 2100.0
+          },
+          "8PSK": {
+            "precision": 0.4620797498045348,
+            "recall": 0.5628571428571428,
+            "f1-score": 0.5075139544869043,
+            "support": 2100.0
+          },
+          "PAM4": {
+            "precision": 0.8090758162700609,
+            "recall": 0.6961904761904761,
+            "f1-score": 0.7484003071410289,
+            "support": 2100.0
+          },
+          "QAM16": {
+            "precision": 0.48243045387994143,
+            "recall": 0.3138095238095238,
+            "f1-score": 0.380265435660704,
+            "support": 2100.0
+          },
+          "QAM64": {
+            "precision": 0.5858461538461538,
+            "recall": 0.4533333333333333,
+            "f1-score": 0.5111409395973154,
+            "support": 2100.0
+          },
+          "CPFSK": {
+            "precision": 0.6429601153291686,
+            "recall": 0.6371428571428571,
+            "f1-score": 0.6400382683568524,
+            "support": 2100.0
+          },
+          "GFSK": {
+            "precision": 0.5948811700182816,
+            "recall": 0.7747619047619048,
+            "f1-score": 0.6730093071354706,
+            "support": 2100.0
+          },
+          "accuracy": 0.5852380952380952,
+          "macro avg": {
+            "precision": 0.5920247727601304,
+            "recall": 0.5852380952380952,
+            "f1-score": 0.5805813774524891,
+            "support": 16800.0
+          },
+          "weighted avg": {
+            "precision": 0.5920247727601305,
+            "recall": 0.5852380952380952,
+            "f1-score": 0.5805813774524891,
+            "support": 16800.0
+          }
+        }
+      },
+      "unseen_snr_test": {
+        "observations": 48000,
+        "accuracy": 0.5772291666666667,
+        "macro_f1": 0.5718326135173553,
+        "balanced_accuracy": 0.5772291666666667,
+        "per_class": {
+          "BPSK": {
+            "precision": 0.5161608684924747,
+            "recall": 0.6973333333333334,
+            "f1-score": 0.5932227420955621,
+            "support": 6000.0
+          },
+          "QPSK": {
+            "precision": 0.6619375760032428,
+            "recall": 0.5443333333333333,
+            "f1-score": 0.5974025974025974,
+            "support": 6000.0
+          },
+          "8PSK": {
+            "precision": 0.44903796151846076,
+            "recall": 0.5756666666666667,
+            "f1-score": 0.504528191644756,
+            "support": 6000.0
+          },
+          "PAM4": {
+            "precision": 0.8250513347022588,
+            "recall": 0.6696666666666666,
+            "f1-score": 0.7392824287028519,
+            "support": 6000.0
+          },
+          "QAM16": {
+            "precision": 0.4564440780434185,
+            "recall": 0.2768333333333333,
+            "f1-score": 0.34464156032783483,
+            "support": 6000.0
+          },
+          "QAM64": {
+            "precision": 0.5564129301355579,
+            "recall": 0.44466666666666665,
+            "f1-score": 0.49430291801760073,
+            "support": 6000.0
+          },
+          "CPFSK": {
+            "precision": 0.6357659434582511,
+            "recall": 0.6446666666666667,
+            "f1-score": 0.6401853690830851,
+            "support": 6000.0
+          },
+          "GFSK": {
+            "precision": 0.582233502538071,
+            "recall": 0.7646666666666667,
+            "f1-score": 0.6610951008645534,
+            "support": 6000.0
+          },
+          "accuracy": 0.5772291666666667,
+          "macro avg": {
+            "precision": 0.5853805243614669,
+            "recall": 0.5772291666666667,
+            "f1-score": 0.5718326135173553,
+            "support": 48000.0
+          },
+          "weighted avg": {
+            "precision": 0.5853805243614669,
+            "recall": 0.5772291666666667,
+            "f1-score": 0.5718326135173551,
+            "support": 48000.0
+          }
+        }
+      }
+    }
+  },
+  "training_size_sensitivity": {
+    "25%": {
+      "training_observations": 19600,
+      "best_epoch": 9,
+      "validation_macro_f1": 0.5379503158125769,
+      "familiar_test": {
+        "observations": 16800,
+        "accuracy": 0.5429761904761905,
+        "macro_f1": 0.5436351432746865
+      },
+      "unseen_snr_test": {
+        "observations": 48000,
+        "accuracy": 0.5352083333333333,
+        "macro_f1": 0.5335994824444332
+      }
+    },
+    "50%": {
+      "training_observations": 39200,
+      "best_epoch": 5,
+      "validation_macro_f1": 0.5464873577350619,
+      "familiar_test": {
+        "observations": 16800,
+        "accuracy": 0.5430952380952381,
+        "macro_f1": 0.54824396491517
+      },
+      "unseen_snr_test": {
+        "observations": 48000,
+        "accuracy": 0.5362083333333333,
+        "macro_f1": 0.5396881171375487
+      }
+    },
+    "100%": {
+      "training_observations": 78400,
+      "best_epoch": 10,
+      "validation_macro_f1": 0.5792942923014999,
+      "familiar_test": {
+        "observations": 16800,
+        "accuracy": 0.5852380952380952,
+        "macro_f1": 0.5805813774524891
+      },
+      "unseen_snr_test": {
+        "observations": 48000,
+        "accuracy": 0.5772291666666667,
+        "macro_f1": 0.5718326135173553
+      }
+    }
+  },
+  "nearest_snr_comparison": [
+    {
+      "heldout_snr_db": -20,
+      "nearest_seen_snr_db": "-18",
+      "unseen_cnn_accuracy": 0.121625,
+      "neighbor_seen_cnn_accuracy": 0.125,
+      "difference_percentage_points": -0.3375000000000003
+    },
+    {
+      "heldout_snr_db": -12,
+      "nearest_seen_snr_db": "-14,-10",
+      "unseen_cnn_accuracy": 0.167625,
+      "neighbor_seen_cnn_accuracy": 0.18916666666666668,
+      "difference_percentage_points": -2.154166666666668
+    },
+    {
+      "heldout_snr_db": -4,
+      "nearest_seen_snr_db": "-6,-2",
+      "unseen_cnn_accuracy": 0.61275,
+      "neighbor_seen_cnn_accuracy": 0.625,
+      "difference_percentage_points": -1.2249999999999983
+    },
+    {
+      "heldout_snr_db": 4,
+      "nearest_seen_snr_db": "2,6",
+      "unseen_cnn_accuracy": 0.851125,
+      "neighbor_seen_cnn_accuracy": 0.8516666666666667,
+      "difference_percentage_points": -0.05416666666666625
+    },
+    {
+      "heldout_snr_db": 12,
+      "nearest_seen_snr_db": "10,14",
+      "unseen_cnn_accuracy": 0.85525,
+      "neighbor_seen_cnn_accuracy": 0.8570833333333333,
+      "difference_percentage_points": -0.18333333333333535
+    },
+    {
+      "heldout_snr_db": 18,
+      "nearest_seen_snr_db": "16",
+      "unseen_cnn_accuracy": 0.855,
+      "neighbor_seen_cnn_accuracy": 0.8516666666666667,
+      "difference_percentage_points": 0.33333333333332993
+    }
+  ]
+}

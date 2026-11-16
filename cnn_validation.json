@@ -1,0 +1,89 @@
+{
+  "model": "CPU-friendly SmallAMC 1D CNN (channels 2-16-32-32; global average pooling)",
+  "optimizer": "Adam(lr=0.002, weight_decay=0.0001)",
+  "batch_size": 1024,
+  "epochs_completed": 10,
+  "best_epoch": 10,
+  "best_validation_accuracy": 0.5839285714285715,
+  "best_validation_macro_f1": 0.5792942923014999,
+  "validation_selection_metric": "macro-F1",
+  "test_sets_used_for_tuning": false,
+  "notes": [
+    "The best checkpoint was saved at epoch 10. The execution environment stopped the run immediately after the epoch-10 metrics were produced, before the original script wrote its summary file.",
+    "The checkpoint weights are present in cnn_best.pt.",
+    "The first 10 epoch metrics below are transcribed from the captured training log."
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.7795,
+      "validation_loss": 1.5358,
+      "validation_accuracy": 0.383,
+      "validation_macro_f1": 0.3487
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.2828,
+      "validation_loss": 1.1875,
+      "validation_accuracy": 0.5154,
+      "validation_macro_f1": 0.4753
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.1413,
+      "validation_loss": 1.1179,
+      "validation_accuracy": 0.5315,
+      "validation_macro_f1": 0.5042
+    },
+    {
+      "epoch": 4,
+      "train_loss": 1.0943,
+      "validation_loss": 1.0814,
+      "validation_accuracy": 0.5559,
+      "validation_macro_f1": 0.54
+    },
+    {
+      "epoch": 5,
+      "train_loss": 1.0687,
+      "validation_loss": 1.074,
+      "validation_accuracy": 0.5623,
+      "validation_macro_f1": 0.5463
+    },
+    {
+      "epoch": 6,
+      "train_loss": 1.05,
+      "validation_loss": 1.0647,
+      "validation_accuracy": 0.562,
+      "validation_macro_f1": 0.5298
+    },
+    {
+      "epoch": 7,
+      "train_loss": 1.0318,
+      "validation_loss": 1.039,
+      "validation_accuracy": 0.5739,
+      "validation_macro_f1": 0.5658
+    },
+    {
+      "epoch": 8,
+      "train_loss": 1.0157,
+      "validation_loss": 1.0312,
+      "validation_accuracy": 0.5731,
+      "validation_macro_f1": 0.5505
+    },
+    {
+      "epoch": 9,
+      "train_loss": 1.0045,
+      "validation_loss": 1.0314,
+      "validation_accuracy": 0.5726,
+      "validation_macro_f1": 0.5568
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.994,
+      "validation_loss": 1.0062,
+      "validation_accuracy": 0.5839,
+      "validation_macro_f1": 0.5793
+    }
+  ],
+  "checkpoint_metrics_recomputed": true
+}

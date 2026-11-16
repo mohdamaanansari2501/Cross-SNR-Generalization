@@ -1,0 +1,50 @@
+{
+  "note": "Preplanned training-size sensitivity analysis. Test data were not used for selecting checkpoints.",
+  "models": {
+    "25%": {
+      "training_observations": 19600,
+      "best_epoch": 9,
+      "validation_macro_f1": 0.5379503158125769,
+      "familiar_test": {
+        "observations": 16800,
+        "accuracy": 0.5429761904761905,
+        "macro_f1": 0.5436351432746865
+      },
+      "unseen_snr_test": {
+        "observations": 48000,
+        "accuracy": 0.5352083333333333,
+        "macro_f1": 0.5335994824444332
+      }
+    },
+    "50%": {
+      "training_observations": 39200,
+      "best_epoch": 5,
+      "validation_macro_f1": 0.5464873577350619,
+      "familiar_test": {
+        "observations": 16800,
+        "accuracy": 0.5430952380952381,
+        "macro_f1": 0.54824396491517
+      },
+      "unseen_snr_test": {
+        "observations": 48000,
+        "accuracy": 0.5362083333333333,
+        "macro_f1": 0.5396881171375487
+      }
+    },
+    "100%": {
+      "training_observations": 78400,
+      "best_epoch": 10,
+      "validation_macro_f1": 0.5792942923014999,
+      "familiar_test": {
+        "observations": 16800,
+        "accuracy": 0.5852380952380952,
+        "macro_f1": 0.5805813774524891
+      },
+      "unseen_snr_test": {
+        "observations": 48000,
+        "accuracy": 0.5772291666666667,
+        "macro_f1": 0.5718326135173553
+      }
+    }
+  }
+}

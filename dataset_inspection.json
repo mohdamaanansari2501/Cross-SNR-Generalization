@@ -1,0 +1,195 @@
+{
+  "dataset_file": "RML2016.10a_dict_optimized.pkl",
+  "archive_md5": "ffedb2c24e33b826d3d0df4aa8f32c1b",
+  "number_of_dictionary_keys": 220,
+  "all_modulation_classes": [
+    "8PSK",
+    "AM-DSB",
+    "AM-SSB",
+    "BPSK",
+    "CPFSK",
+    "GFSK",
+    "PAM4",
+    "QAM16",
+    "QAM64",
+    "QPSK",
+    "WBFM"
+  ],
+  "selected_digital_classes": [
+    "BPSK",
+    "QPSK",
+    "8PSK",
+    "PAM4",
+    "QAM16",
+    "QAM64",
+    "CPFSK",
+    "GFSK"
+  ],
+  "all_snr_levels_db": [
+    -20,
+    -18,
+    -16,
+    -14,
+    -12,
+    -10,
+    -8,
+    -6,
+    -4,
+    -2,
+    0,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18
+  ],
+  "observations_all_classes": 220000,
+  "observations_selected_classes": 160000,
+  "samples_per_class_snr_pair": [
+    1000
+  ],
+  "stored_array_shapes": [
+    [
+      1000,
+      2,
+      128
+    ]
+  ],
+  "stored_dtypes": [
+    "float32"
+  ],
+  "iq_shape_after_loading": [
+    2,
+    128
+  ],
+  "all_iq_values_finite": true,
+  "split_seed": 678,
+  "unseen_snr_levels_db": [
+    -20,
+    -12,
+    -4,
+    4,
+    12,
+    18
+  ],
+  "split_counts": {
+    "train": {
+      "observations": 78400,
+      "snr_levels": [
+        -18,
+        -16,
+        -14,
+        -10,
+        -8,
+        -6,
+        -2,
+        0,
+        2,
+        6,
+        8,
+        10,
+        14,
+        16
+      ],
+      "class_counts": {
+        "BPSK": 9800,
+        "QPSK": 9800,
+        "8PSK": 9800,
+        "PAM4": 9800,
+        "QAM16": 9800,
+        "QAM64": 9800,
+        "CPFSK": 9800,
+        "GFSK": 9800
+      }
+    },
+    "validation": {
+      "observations": 16800,
+      "snr_levels": [
+        -18,
+        -16,
+        -14,
+        -10,
+        -8,
+        -6,
+        -2,
+        0,
+        2,
+        6,
+        8,
+        10,
+        14,
+        16
+      ],
+      "class_counts": {
+        "BPSK": 2100,
+        "QPSK": 2100,
+        "8PSK": 2100,
+        "PAM4": 2100,
+        "QAM16": 2100,
+        "QAM64": 2100,
+        "CPFSK": 2100,
+        "GFSK": 2100
+      }
+    },
+    "familiar_test": {
+      "observations": 16800,
+      "snr_levels": [
+        -18,
+        -16,
+        -14,
+        -10,
+        -8,
+        -6,
+        -2,
+        0,
+        2,
+        6,
+        8,
+        10,
+        14,
+        16
+      ],
+      "class_counts": {
+        "BPSK": 2100,
+        "QPSK": 2100,
+        "8PSK": 2100,
+        "PAM4": 2100,
+        "QAM16": 2100,
+        "QAM64": 2100,
+        "CPFSK": 2100,
+        "GFSK": 2100
+      }
+    },
+    "unseen_snr_test": {
+      "observations": 48000,
+      "snr_levels": [
+        -20,
+        -12,
+        -4,
+        4,
+        12,
+        18
+      ],
+      "class_counts": {
+        "BPSK": 6000,
+        "QPSK": 6000,
+        "8PSK": 6000,
+        "PAM4": 6000,
+        "QAM16": 6000,
+        "QAM64": 6000,
+        "CPFSK": 6000,
+        "GFSK": 6000
+      }
+    }
+  },
+  "notes": [
+    "Only the eight digital modulation classes are retained; three analog classes are excluded.",
+    "All examples at the six preselected unseen SNR levels are reserved for the unseen-SNR test.",
+    "The remaining fourteen SNR levels are split 70/15/15 within each class-SNR cell.",
+    "The dataset provides no explicit transmission/group identifiers, so the split controls class and SNR leakage but cannot enforce group-level independence beyond available metadata."
+  ]
+}

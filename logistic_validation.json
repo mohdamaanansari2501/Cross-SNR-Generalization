@@ -1,0 +1,15 @@
+{
+  "model": "LogisticRegression(saga, C=1.0, max_iter=200, tol=1e-3)",
+  "features": "flattened I/Q (256 features)",
+  "scaling": "StandardScaler fitted on training set only",
+  "train_observations": 78400,
+  "validation_observations": 16800,
+  "validation_accuracy": 0.13089285714285714,
+  "validation_macro_f1": 0.13061229967595447,
+  "iterations_per_class": [
+    15
+  ],
+  "training_seconds": 6.785959367000032,
+  "warnings": [],
+  "test_sets_used_for_tuning": false
+}
